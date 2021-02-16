@@ -2,7 +2,7 @@ A swipe detection directive.
 
 ## Usage
 
-A simple usage example: (Currently in beta mode)
+A simple usage example: (Currently in alpha mode)
 
 ```dart
 import 'package:swipy/swipy.dart';
