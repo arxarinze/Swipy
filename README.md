@@ -20,11 +20,25 @@ class ExampleComponent{
   void swL(){
     ...
   }
+
+  void swD(){
+    ...
+  }
+
+  void swU(){
+    ...
+  }
 }
 ```
 
 ```html
-<div swipy [swipeLeft]="swL" [swipeRight]="swR"></div>
+<div
+  swipy
+  [swipeLeft]="swL"
+  [swipeRight]="swR"
+  [swipeDown]="swD"
+  [swipeUp]="swU"
+></div>
 ```
 
 ## Features and bugs

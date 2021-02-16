@@ -9,9 +9,7 @@ class Swipy {
   var end_x = 0;
   var end_y = 0;
   @Input()
-  dynamic swipeLeft;
-  @Input()
-  dynamic swipeRight;
+  dynamic swipeLeft, swipeRight, swipeUp, swipeDown;
   final Element _el;
   Swipy(this._el) {
     _el.addEventListener('touchstart', (event) {
@@ -24,12 +22,14 @@ class Swipy {
       var a = (event as TouchEvent);
       end_x = a.changedTouches[0].page.x;
       end_y = a.changedTouches[0].page.y;
-
       if ((end_x - start_x) <= -30 && (end_y - start_y) <= 100) {
         swipeLeft();
-      }
-      if ((end_x - start_x) >= 30 && (end_y - start_y) <= 100) {
+      } else if ((end_x - start_x) >= 30 && (end_y - start_y) <= 100) {
         swipeRight();
+      } else if ((end_x - start_x) <= 100 && (end_y - start_y) <= 30) {
+        swipeUp();
+      } else if ((end_x - start_x) <= 100 && (end_y - start_y) >= -30) {
+        swipeDown();
       }
     });
   }
