@@ -2,7 +2,7 @@ A swipe detection directive.
 
 ## Usage
 
-A simple usage example: (Currently in alpha mode)
+A simple usage example: (Currently in beta mode)
 
 ```dart
 import 'package:swipy/swipy.dart';
@@ -11,10 +11,20 @@ import 'package:swipy/swipy.dart';
   ...
   directives: [Swipy],
 )
+class ExampleComponent{
+
+  void swR(){
+    ...
+  }
+
+  void swL(){
+    ...
+  }
+}
 ```
 
 ```html
-<div swipy></div>
+<div swipy [swipeLeft]="swL" [swipeRight]="swR"></div>
 ```
 
 ## Features and bugs
