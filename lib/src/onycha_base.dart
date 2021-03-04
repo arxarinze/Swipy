@@ -34,3 +34,14 @@ class Swipy {
     });
   }
 }
+
+@Directive(selector: '[touchy]')
+class Touchy {
+  @Input()
+  dynamic swipeLeft, swipeRight, swipeUp, swipeDown;
+  final Element _el;
+  Touchy(this._el) {
+    _el.addEventListener('touchstart', (event) {});
+    _el.addEventListener('touchend', (event) {});
+  }
+}

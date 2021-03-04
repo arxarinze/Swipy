@@ -1,8 +1,8 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library swipy;
+library onycha;
 
-export 'src/swipy_base.dart';
+export 'src/onycha_base.dart';
 
 // TODO: Export any libraries intended for clients of this package.

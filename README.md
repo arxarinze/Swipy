@@ -1,4 +1,4 @@
-A swipe detection directive.
+A touch detection directive.
 
 ## Usage
 

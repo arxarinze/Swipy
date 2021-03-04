@@ -1,7 +1,7 @@
-name: swipy
-description: A starting point for Dart libraries or applications.
-# version: 1.0.0
-# homepage: https://www.example.com
+name: onycha
+description: A router for RawDart SPA Development and AngularDart Development.
+version: 1.0.0-dev.1
+homepage: https://github.com/arxarinze/swipy
 
 environment:
   sdk: ">=2.10.0 <3.0.0"

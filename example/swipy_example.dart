@@ -1,3 +1,3 @@
-import 'package:swipy/swipy.dart';
+import 'package:onycha/onycha.dart';
 
 void main() {}
