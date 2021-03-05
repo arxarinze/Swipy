@@ -38,10 +38,22 @@ class Swipy {
 @Directive(selector: '[touchy]')
 class Touchy {
   @Input()
-  dynamic swipeLeft, swipeRight, swipeUp, swipeDown;
+  dynamic touchy, longtouchy, startTime, endTime;
+
   final Element _el;
   Touchy(this._el) {
-    _el.addEventListener('touchstart', (event) {});
-    _el.addEventListener('touchend', (event) {});
+    _el.addEventListener('touchstart', (event) {
+      startTime = DateTime.now();
+    });
+    _el.addEventListener('touchend', (event) {
+      endTime = DateTime.now();
+
+      if (startTime.difference(endTime).inSeconds >= 3) {
+        longtouchy();
+      } else if (startTime.difference(endTime).inSeconds <= 2 &&
+          startTime.difference(endTime).inSeconds > 0) {
+        touchy();
+      }
+    });
   }
 }
