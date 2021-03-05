@@ -1,4 +1,4 @@
-A touch detection directive for AngularDart.
+A touch detection directive for AngularDart. Features include touch, swiping, panning, dragging and dropping.
 
 ## Usage
 
@@ -9,7 +9,7 @@ import 'package:onycha/onycha.dart';
 
 @Component(
   ...
-  directives: [Swipy],
+  directives: [Swipy, Touchy],
 )
 class ExampleComponent{
 
@@ -28,6 +28,12 @@ class ExampleComponent{
   void swU(){
     ...
   }
+  void soft(){
+
+  }
+  void hard(){
+
+  }
 }
 ```
 
@@ -39,6 +45,8 @@ class ExampleComponent{
   [swipeDown]="swD"
   [swipeUp]="swU"
 ></div>
+
+<div touchy [softTouchy]="soft" [hardTouchy]="hard"></div>
 ```
 
 ## Features and bugs

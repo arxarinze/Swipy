@@ -38,7 +38,7 @@ class Swipy {
 @Directive(selector: '[touchy]')
 class Touchy {
   @Input()
-  dynamic touchy, longtouchy, startTime, endTime;
+  dynamic softtouchy, hardtouchy, startTime, endTime;
 
   final Element _el;
   Touchy(this._el) {
@@ -49,10 +49,10 @@ class Touchy {
       endTime = DateTime.now();
 
       if (startTime.difference(endTime).inSeconds >= 3) {
-        longtouchy();
+        hardtouchy();
       } else if (startTime.difference(endTime).inSeconds <= 2 &&
           startTime.difference(endTime).inSeconds > 0) {
-        touchy();
+        softtouchy();
       }
     });
   }
