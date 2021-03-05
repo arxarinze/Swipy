@@ -1,11 +1,11 @@
-A touch detection directive.
+A touch detection directive for AngularDart.
 
 ## Usage
 
 A simple usage example: (Currently in beta mode)
 
 ```dart
-import 'package:swipy/swipy.dart';
+import 'package:onycha/onycha.dart';
 
 @Component(
   ...
