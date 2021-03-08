@@ -57,3 +57,7 @@
 ## 1.0.15-dev.1
 
 - Updated Readme
+
+## 1.0.16-dev.1
+
+- Minor fixes
