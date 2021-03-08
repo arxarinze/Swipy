@@ -1,6 +1,6 @@
 A touch detection directive for AngularDart. Features include touch, swiping, panning, dragging and dropping.
 
-## Usage
+## Onycha Usage
 
 A simple usage example: (Currently in beta mode)
 

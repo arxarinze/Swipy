@@ -49,3 +49,7 @@
 ## 1.0.13-dev.1
 
 - Minor fixes
+
+## 1.0.14-dev.1
+
+- Removed touch event defaults to fix issues of firing click on chrome too
