@@ -45,27 +45,33 @@ class Touchy {
 
   final Element _el;
   Touchy(this._el) {
-    _el.addEventListener('touchstart', (event) {
+    _el.addEventListener('mousedown', (event) {
       event.preventDefault();
+    });
+    _el.addEventListener('mouseup', (event) {
+      event.preventDefault();
+    });
+    _el.addEventListener('touchstart', (event) {
       startTime = DateTime.now();
       print(startTime);
     });
     _el.addEventListener('touchmove', (event) {
-      event.preventDefault();
-      startTime = 0;
-      endTime = 0;
+      startTime = DateTime.now();
+      endTime = startTime;
     });
     _el.addEventListener('touchend', (event) {
       event.preventDefault();
+      event.stopImmediatePropagation();
+      event.stopPropagation();
       endTime = DateTime.now();
       if (startTime != 0) {
-        if (endTime.difference(startTime).inMilliseconds >= 900) {
+        if (endTime.difference(startTime).inMilliseconds >= 500) {
           if (hardTouchy != null && args != null) {
             hardTouchy(args[0], args[1]);
           } else if (hardTouchy != null && args == null) {
             hardTouchy();
           }
-        } else if (endTime.difference(endTime).inMilliseconds <= 899 &&
+        } else if (endTime.difference(endTime).inMilliseconds <= 499 &&
             endTime.difference(endTime).inMilliseconds > 0) {
           if (softTouchy != null && args != null) {
             softTouchy(args[0], args[1]);
