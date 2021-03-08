@@ -38,21 +38,41 @@ class Swipy {
 @Directive(selector: '[touchy]')
 class Touchy {
   @Input()
-  dynamic softtouchy, hardtouchy, startTime, endTime;
+  dynamic softTouchy, hardTouchy;
+  @Input()
+  List<dynamic> args;
+  var startTime, endTime;
 
   final Element _el;
   Touchy(this._el) {
     _el.addEventListener('touchstart', (event) {
+      event.preventDefault();
       startTime = DateTime.now();
+      print(startTime);
+    });
+    _el.addEventListener('touchmove', (event) {
+      event.preventDefault();
+      startTime = 0;
+      endTime = 0;
     });
     _el.addEventListener('touchend', (event) {
+      event.preventDefault();
       endTime = DateTime.now();
-
-      if (startTime.difference(endTime).inSeconds >= 3) {
-        hardtouchy();
-      } else if (startTime.difference(endTime).inSeconds <= 2 &&
-          startTime.difference(endTime).inSeconds > 0) {
-        softtouchy();
+      if (startTime != 0) {
+        if (endTime.difference(startTime).inMilliseconds >= 900) {
+          if (hardTouchy != null && args != null) {
+            hardTouchy(args[0], args[1]);
+          } else if (hardTouchy != null && args == null) {
+            hardTouchy();
+          }
+        } else if (endTime.difference(endTime).inMilliseconds <= 899 &&
+            endTime.difference(endTime).inMilliseconds > 0) {
+          if (softTouchy != null && args != null) {
+            softTouchy(args[0], args[1]);
+          } else if (softTouchy != null && args == null) {
+            softTouchy();
+          }
+        }
       }
     });
   }
